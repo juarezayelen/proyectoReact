@@ -40,3 +40,9 @@
 .nav {
   color: #61dafb;
 }
+
+img {
+  width:30px;
+  height:30px;
+  background-position: right;
+}

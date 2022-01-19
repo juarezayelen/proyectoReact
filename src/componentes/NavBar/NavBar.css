@@ -1,7 +1,8 @@
-/*.nav{
+.nav{
     display:flex;
     
 }
 .nav li{
     list-style: none;
-}*/
+}
+

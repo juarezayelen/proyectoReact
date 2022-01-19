@@ -14,6 +14,7 @@ const NavBar = ({data}) => {
 							{data.map((item) => {
                                 return <Nav.Link href={item.enlace}>{ item.nombre}</Nav.Link>
 							})}
+                             <CartWidget />
 						</Nav>
                     </Navbar.Collapse>
                 </Container>

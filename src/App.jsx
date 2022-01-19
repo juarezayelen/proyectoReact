@@ -1,6 +1,9 @@
 import './App.css';
-import NavBar from './componentes/NavBar/NavBar'
+import React, {useState, useEffect} from "react";
+import NavBar from './componentes/NavBar/NavBar';
+import ListaDeProductos from "./componentes/ItemListContainer/ListaDeProductos";
 import ItemListContainer from "./componentes/ItemListContainer/ItemListContainer"
+
 
 const ItemList = [
   { nombre: 'Home' , enlace: '/'},
@@ -11,8 +14,9 @@ const ItemList = [
 function App() {
   return (
     <div className='App'>
-      <NavBar data = {ItemList}/>
+     // <NavBar data = {ItemList}/>
       <ItemListContainer greeting="Bienvenido"/>
+      <ListaDeProductos />
 
     </div>
     
