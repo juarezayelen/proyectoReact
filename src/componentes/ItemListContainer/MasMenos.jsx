@@ -1,14 +1,12 @@
 import React, {useState} from "react";
 
 export default function MasMenos({tope}){
-
-    const [cantidad, setCantidad] = useState(0); //estado para la suma
-    const [cantidadR, setCantidadR] = useState(0); //estado para la resta
+ 
+    const [cantidad, setCantidad] = useState(0); //estado para la suma y resta
     const [desactivado, setDesactivado] = useState(false); //estado deshabilitado cuando el stock es cero
 
     function sumar(){ //Función que agrega un producto al carrito si la cantidad es < al tope
-        let aux = cantidad;
-
+        let aux = cantidad
         if (aux < tope){
             aux = aux + 1;
         }
@@ -16,12 +14,13 @@ export default function MasMenos({tope}){
     }
 
     function restar(){ //Función que elimina un producto del carrito si la cantidadR es >= al init
-        let aux = cantidadR;
 
-        if (0 < aux <= tope){
-            aux = aux - 1;
+        let auxR = cantidad
+
+        if (tope > '1'){
+            auxR = auxR - 1;
         }
-        setCantidadR(aux);
+        setCantidad(auxR);
     }
 
     function sinStock(){ //Si el stock está en cero, no se puede agregar el producto al carrito
