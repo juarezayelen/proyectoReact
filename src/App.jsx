@@ -1,26 +1,26 @@
 import './App.css';
-import React, {useState, useEffect} from "react";
+import React from "react";
 import NavBar from './componentes/NavBar/NavBar';
-import ListaDeProductos from "./componentes/ItemListContainer/ListaDeProductos";
+import ItemList from './componentes/ItemListContainer/ItemList';
 import ItemListContainer from "./componentes/ItemListContainer/ItemListContainer"
+import ItemDetailContainer from './componentes/ItemListContainer/ItemDetailContainer';
 
 
-const ItemList = [
+const menu = [
   { nombre: 'Home' , enlace: '/'},
   { nombre: 'Nosotros', enlace: '/nosotros'},
   { nombre: 'Productos', enlace: '/productos'},
   { nombre: 'Contacto', enlace: '/contacto'}
 ]
-function App() {
+export default function App() {
   return (
     <div className='App'>
-     // <NavBar data = {ItemList}/>
+      <NavBar data = {menu}/>
       <ItemListContainer greeting="Bienvenido"/>
-      <ListaDeProductos />
+      <ItemList />
+      <ItemDetailContainer />
 
     </div>
     
   )
 }
-
-export default App

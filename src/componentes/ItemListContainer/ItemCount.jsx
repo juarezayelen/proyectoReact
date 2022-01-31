@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-export default function MasMenos({tope}){
+export default function ItemCount({tope}){
  
     const [cantidad, setCantidad] = useState(0); //estado para la suma y resta
     const [desactivado, setDesactivado] = useState(true); //estado deshabilitado cuando el stock es cero

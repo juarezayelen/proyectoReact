@@ -1,6 +1,6 @@
 import React from "react";
 import CartWidget from '../CartWidget/CartWidget'
-import {Navbar, Nav, NavDropdown, Container} from "react-bootstrap"
+import {Navbar, Nav, Container} from "react-bootstrap"
 
 const NavBar = ({data}) => {
     return (
