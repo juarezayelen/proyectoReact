@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from "react"
-import ItemDetail from "./ItemDetail";
+import React, { useState, useEffect } from "react";
 import { useParams, Link } from 'react-router-dom';
+import CategoriaDetail from "./CategoriaDetail";
 
-export default function ItemDetailContainer() {
-    
-    const {itemId}=useParams();
-    const [arrayDetalleItems, setArrayDetalleItems]=useState({});
 
+export default function CategoriaContainer() {
+
+    const { categoriaId } = useParams();
+    const [arrayCategoriaItems, setArrayCategoriaItems]=useState({});
     useEffect(()=>{
         setTimeout(()=>{
-            let arrayDetalleItems = [ 
+            let arrayCategoriaItems = [ 
                 { id: 1, nombre: 'remera brillos', descripcion: 'remera de modal', categoria: 'remeras', stock: 5 },
                 { id: 2, nombre: 'remera roja', descripcion: 'remera de algodon', categoria: 'remeras', stock: 5 },
                 { id: 3, nombre: 'remera azul', descripcion: 'remera de modal', categoria: 'remeras', stock: 5 },
@@ -20,18 +20,23 @@ export default function ItemDetailContainer() {
                 { id: 8, nombre: 'oxford', descripcion: 'tiro alto', categoria: 'pantalones', stock: 2 },
                 { id: 9, nombre: 'short', descripcion: 'elastizado con roturas', categoria: 'pantalones', stock: 2 }
             ]
-            arrayDetalleItems=arrayDetalleItems.filter(item=> item.id === itemId);
-            let myItem= arrayDetalleItems[0];
-            setArrayDetalleItems(myItem);
+            arrayCategoriaItems=arrayCategoriaItems.filter(item=> item.categoria === categoriaId);
+            let myItem= arrayCategoriaItems[0];
+            setArrayCategoriaItems(myItem);
         }, 2000)
-    }, [itemId])
+        //console.log(categoriaId)
+    }, [categoriaId])
 
     return (
         <>
-        {itemId}
-        <ItemDetail arrayDetalleItems={arrayDetalleItems}/>
-        <Link to={"/item/2"}> Ver Más Info</Link>
         
+        <Link to="/categoria/remeras">Remeras</Link>
+        <Link to={"/categoria/vestidos"}>Vestidos</Link>
+        <Link to={"/categoria/pantalones"}>Pantalones</Link>
+        Estoy en la categoria {categoriaId}
+        <CategoriaDetail arrayCategoriaItems={arrayCategoriaItems}/>
         </>
-    );
+    )
+
+
 }

@@ -1,3 +1,7 @@
+body {
+  padding: 5px;
+}
+
 .App {
   text-align: center;
 }
@@ -45,4 +49,35 @@ img {
   width:30px;
   height:30px;
   background-position: right;
+}
+
+.ListaDeItems {
+  background-color: #61dafb;
+  border-color: blue;
+}
+
+.DatosDeProducto{
+  background-color: cadetblue;
+  width:fit-content;
+  height:fit-content;
+  border-width: 5pt;
+  border-color: darkgreen;
+  align-items: center;
+}
+
+label {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+}
+
+p {
+  font-style: italic;
+  font-size: medium;
+}
+
+.FormatoCarrito {
+ 
+  background-color: darkcyan;
+  width: fit-content;
 }
