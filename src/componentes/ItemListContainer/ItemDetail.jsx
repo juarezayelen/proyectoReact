@@ -1,29 +1,33 @@
-import React from "react";
+import React, {useState} from "react";
 import ItemCount from "./ItemCount";
 
-export default function ItemDetail({arrayDetalleItems}) {
+export default function ItemDetail({DetalleItem}) {
     
-    function onAdd(){
-        alert(arrayDetalleItems.id + " " + arrayDetalleItems.nombre + " " + arrayDetalleItems.descripcion + " " + arrayDetalleItems.categoria + " " + arrayDetalleItems.stock);
+    const [mostrarItemCount, setMostrarItemCount] = useState(true)
+
+    function onAdd(cantidad){
+        alert('Agregar' +cantidad);
+        setMostrarItemCount(false);
     }
     
     return (
         <>
-            <div>
-                {(arrayDetalleItems)? 
+            <div> 
+                
                     <>
-                    <p>{arrayDetalleItems.id}</p>
-                    <p>{arrayDetalleItems.nombre}</p>
-                    <p>{arrayDetalleItems.descripcion}</p>
-                    <p>{arrayDetalleItems.categoria}</p>
-                    <p>{arrayDetalleItems.stock}</p>
-                    <div onClick={()=>onAdd()}>Agregar al Carrito</div>
-                    <br />
-                    <br />
-                     <ItemCount tope={arrayDetalleItems.stock}/>
+                    {/* <p>{DetalleItem.id}</p>
+                    <p>{DetalleItem.nombre}</p>
+                    <p>{DetalleItem.descripcion}</p>
+                    <p>{DetalleItem.categoria}</p>
+                    <p>{DetalleItem.stock}</p> */}
+                    {
+                    (mostrarItemCount)?
+                     <ItemCount tope={DetalleItem} onAdd={onAdd}/>
+                     :
+                     <button>Finalizar compra</button>
+                    }
                     </>
-                :
-                    <>Loading...</>} 
+                
                 
             </div>
            

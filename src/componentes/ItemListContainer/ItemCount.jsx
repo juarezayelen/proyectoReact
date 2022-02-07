@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-export default function ItemCount({tope}){
+export default function ItemCount({tope, onAdd}){
  
     const [cantidad, setCantidad] = useState(0); //estado para la suma y resta
     const [desactivado, setDesactivado] = useState(true); //estado deshabilitado cuando el stock es cero
@@ -38,6 +38,7 @@ export default function ItemCount({tope}){
         <span onClick={()=>restar()}>-</span>
         <span onClick={()=>sinStock()}>{cantidad}</span>
         <span onClick={()=>sumar()}>+</span>
+        <button onClick={() => onAdd(3)}>Agregar al Carrito</button>
         <br />
         
         </>
